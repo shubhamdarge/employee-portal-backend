@@ -1,0 +1,18 @@
+<configuration>
+  <!-- Optional: app name from Spring -->
+  <springProperty scope="context" name="APP_NAME"
+                  source="spring.application.name"
+                  defaultValue="employee-portal-backend"/>
+
+  <appender name="JSON" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+      <!-- Add fixed fields to every log line -->
+      <customFields>{"app":"${APP_NAME}"}</customFields>
+    </encoder>
+  </appender>
+
+  <!-- Control level via env LOG_LEVEL (defaults to INFO) -->
+  <root level="${LOG_LEVEL:-INFO}">
+    <appender-ref ref="JSON"/>
+  </root>
+</configuration>
