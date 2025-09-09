@@ -20,7 +20,6 @@ import com.testrun.springboot.model.Employee;
 import com.testrun.springboot.repository.EmployeeRepository;
 
 @RestController
-@CrossOrigin(origins = "https://68c0020b8387fb2e18566bd8--employee-portal-frontend.netlify.app/employees")
 @RequestMapping("/api/v1/")
 public class EmployeeController {
 
